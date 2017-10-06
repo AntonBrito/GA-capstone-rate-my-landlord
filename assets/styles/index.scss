@@ -21,8 +21,243 @@ body {
   padding: 16px;
 }
 
-.botton {
+.button {
   float: right;
   margin-left: 20px;
   margin-top: 0px;
+}
+
+.signout-button {
+  border-radius: 45px;
+  color: $cream;
+  font-size: 20px;
+}
+
+.signin-button {
+  background-color:
+  color: $cream;
+  font-size: 20px;
+}
+
+.signup-button {
+  background-color:
+  border-radius: 45px;
+  color: $cream;
+  font-size: 20px;
+}
+
+.signform {
+  text-align: center;
+}
+
+.signfor {
+  text-align: center;
+}
+
+.email-textbox {
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 30px;
+  width: 15%;
+}
+
+.pass-textbox {
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 30px;
+  width: 15%;
+}
+
+.pass-confir-textbox {
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 30px;
+  width: 15%;
+}
+
+.changepassbutton {
+  border-radius: 10px;
+  box-sizing: content-box;
+  width: 145px;
+}
+
+.changepass1 {
+  border-radius: 10px;
+  box-sizing: content-box;
+  width: 155px;
+}
+
+.changepass2 {
+  border-radius: 10px;
+  box-sizing: content-box;
+  width: 155px;
+}
+
+
+.landlords_page {
+  text-align: center;
+  word-spacing: 15px;
+}
+
+
+.alllandlords {
+  border: 2px solid $cream;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+  height: 30px;
+  width: 25%;
+}
+
+.mylandloards {
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+  height: 30px;
+  width: 10%;
+}
+
+.get-all-my-landlords {
+  font-size: 20px;
+}
+
+.comments_page {
+  font-size: 15px;
+  text-align: center;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  background-color: $lightgrey;
+  border-radius: 20px;
+  display: none;
+  min-width: 160px;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.comment-dropdown {
+  word-spacing: 1px;
+}
+
+li {
+  display: inline-block;
+  font-size: 30px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 120px;
+  text-align: center;
+}
+
+.message {
+  font-size: 20px;
+}
+
+.dropdown-content {
+  word-spacing: 1px;
+}
+
+.navbar {
+  background-color: $lightgrey;
+  font-size: 30px;
+  text-align: center;
+  word-spacing: 40px;
+}
+
+legend {
+  font-size: 40px;
+}
+
+.create {
+  text-align: center;
+}
+
+.landlors-name {
+  background-color: $canvas;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  width: 20%;
+}
+
+.comment-subject {
+  background-color: $canvas;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  width: 20%;
+ }
+
+textarea {
+  padding: 12px 25px;
+}
+
+.update-landlord {
+  text-align: center;
+}
+
+.update-comments {
+  text-align: center;
+}
+
+.update-landlord-name {
+  background-color: $canvas;
+  border: 2px solid;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  width: 20%;
+ }
+
+.update-comments-subject {
+  background-color: $canvas;
+  border: 2px solid;
+  border-radius: 20px;
+  font-size: 17px;
+  text-align: center;
+  width: 30%;
+ }
+
+.comment-subject {
+  background-color: $canvas;
+  border: 2px solid;
+  border-radius: 20px;
+  font-size: 17px;
+  text-align: center;
+  width: 30%;
+ }
+
+.textbox {
+  background-color: $canvas;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 350px;
+  width: 40%;
+}
+
+.submit {
+  border-radius: 45px;
+  color: $cream;
+  font-size: 20px;
 }
