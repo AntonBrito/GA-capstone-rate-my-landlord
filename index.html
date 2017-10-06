@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>ratemylandlord</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -10,16 +10,145 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <header>
+        <h1>Rate my LandLord</h1>
+      <div class="dropdown">
+        <button class="dropbtn setting">Settings</button>
+        <div class="dropbdown-content">
+          <button class="changepass dropbtn">changePassword</button>
+          <button type="button" class="btn btn-primary">Primary</button>
+        <div class="dropdown-content">
+          <form id="change-password" class="changepass1">
+            <input class="changepass1" type="password" name="credentials[old]" value="" placeholder="Old Password">
+            <input class="changepass2" type="password" name="credentials[new]" value="" placeholder="New Password">
+            <button class="changepassbutton submit" type="submit" name="submit" value="Change Password">Change Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      </header>
+      <div class="navbar">
+        <ul>
+          <div class="dropdown">
+            <li><a href="#landlord">Landlord</a></li>
+            <div class="dropdown-content">
+              <div id=get-all-landlords>All Landlords</div>
+              <li><button id="create-landlord" type="submit" class="create-landlord">Create a Post</button></li>
+            </div>
+          </div>
+
+      </div>
+
+      <main>
+
+        <br><br>
+        <div id="message">
+        </div>
+        <br><br>
+        <div id="landlords_page" class="landlords_page">
+      <div id="landlords-div">
+      </div>
+      </div>
+        <br><br>
+
+<div id="pages_page" class="pages_page">
+  <div id="pages-div">
+  </div>
+</div>
+
+<br><br>
+
+        <div class="signform">
+        <form id="sign-in" class="sign-in">
+          <fieldset>
+            <legend>Login Below</legend>
+            <input class="email-textbox" type="text" name="credentials[email]" placeholder="Email">
+            <br><br>
+            <input class="pass-textbox" type="password" name="credentials[password]" placeholder="Password">
+            <br><br>
+            <button class="signin-button btn-default" type="submit" id="sign-in-button" name="submit" value="Sign In!">Sign In!</button>
+          </fieldset>
+        </form>
+      </div>
+      <br><br>
+            <!--all the landlords-->
+      <div class="alllandlordsbutton" align=center>
+        <button id="alllandlords" type="submit" class="alllandlords btn-default">Check out our landlords!</button>
+      </div>
+
+    </div>
+
+    <br><br>
+            <!--create comment -->
+  <div id="create_landlord" class="create_landlord" align=center>
+    <form id=landlord_name class="landlord_name">
+      <fieldset>
+        <legend>Create a Landlord</legend>
+        <input id="landlord-name" class="landlord-name" type="text" name="name" placeholder="Landlord's name">
+        <br><br>
+        <input id="landlord-address" class="landlord-address" placeholder="Landlord's Address" id="textbox" type="text">
+        <br><br>
+        <button type="submit" id="submit-create-landlords" class="submit submit-create-landlords btn-default" name="submit" value="Submit!">Submit!</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <br></br>
+        <!--create comment-->
+    <div id="create_comment" class="create_comment" align=center>
+          <form id=comment_title class="comment_title">
+            <fieldset>
+              <legend>Comment about your landlord</legend>
+              <input id="comment-title" class="comment-title" type="text" name="Subject" placeholder="Subject Here">
+              <br><br>
+              <textarea name="comment" placeholder="Comment Here" id="textbox" class="textbox"></textarea>
+              <br><br>
+              <input id="comment-rate" class="comment-rate" type="text" name="rate" placeholder="Rate">
+              <br><br>
+              <button type="submit" id="submit-create-comment" class="submit submit-create-comment btn-default" name="submit" value="Submit!">Submit!</button>
+            </fieldset>
+          </form>
+        </div>
+        <br><br>
+            <!--update landlord -->
+        <div id="update_landlord" class="update-landlord">
+      <form id=update_landlord_form class="update_landlord_form">
+        <fieldset>
+          <legend>Update a Landlord</legend>
+          <input id="update-landlords-name" class="update-landlords-name" type="text" name="name" placeholder="landlord's name">
+          <br><br>
+          <input id="update-landlord-address" class="update-landlord-address" placeholder="Landlord's Address" id="textbox" type="text">
+          <br><br>
+          <button type="submit" id="submit-update-landlords" class="submit submit-update-landlords btn-default" name="submit" value="Update!">Update!</button>
+        </fieldset>
+      </form>
+    </div>
+  <br><br>
+
+  <br></br>
+          <!-- update comment-->
+    <div id="update_comment" class="update_comment" align=center>
+          <form id=update_comment_title class="update_comment_title">
+            <fieldset>
+              <legend>Comment about your landlord</legend>
+              <input id="update-comment-title" class="comment-title" type="text" name="Subject" placeholder="Subject Here">
+              <br><br>
+              <textarea name="comment" placeholder="Comment Here" id="textbox" class="textbox"></textarea>
+              <br><br>
+              <input id="comment-rate" class="comment-rate" type="text" name="rate" placeholder="Rate">
+              <br><br>
+              <button type="submit" id="submit-update-comment" class="submit submit-update-comment btn-default" name="submit" value="Submit!">Update!</button>
+            </fieldset>
+          </form>
+        </div>
+        <br><br>
+
+      </main>
+
     </body>
 </html>
