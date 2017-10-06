@@ -8,8 +8,6 @@ $(() => {
   setAPIOrigin(location, config)
 })
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
 $(() => {
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
@@ -31,14 +29,11 @@ $(() => {
     $('#message').empty()
   })
 
-  // ///// //
-  // views //
-  // ///// //
-
+  // views
   // landing page
   $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #update_Comment').hide()
 
-  // posts view
+  // landlords view
   $('#get-every-landlords').on('click', function () {
     $('#landlords_page').show()
     $('#message').empty()
@@ -49,20 +44,20 @@ $(() => {
     $('#message').empty()
     $('#comments_page, #create_landlord, #create_comment, #update_landlord, #update_comment').hide()
   })
-  // pages view
+  // comments view
   $('#listOfComments').on('click', function () {
     $('#comments_page').show()
     $('#message').empty()
     $('#landlords_page, #create_posts, #create_pages, #update_posts, #update_pages').hide()
   })
-  // create posts view
+  // create landlords view
   $('#show-landlord-create').on('click', function () {
     $('#create_landlord').show()
     $('#message').empty()
     $('#landlords_page, #comments_page, #create_comment, #update_landlord, #update_comment').hide()
   })
 
-  // create pages view
+  // create comments view
   $('#show-comment-create').on('click', function () {
     $('#create_comment').show()
     $('#message').empty()

@@ -1,7 +1,6 @@
+'use strict'
 const app = require('../app.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
-// Not sure this require is necessary here
-// const config = require('../config')
 
 const signUp = (data) => {
   return $.ajax({

@@ -4,14 +4,11 @@
       <title>ratemylandlord</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
       <header>
@@ -20,7 +17,7 @@
         <button class="dropbtn setting">Settings</button>
         <div class="dropbdown-content">
           <button class="changepass dropbtn">changePassword</button>
-          <button type="button" class="btn btn-primary">Primary</button>
+          <!-- <button type="button" class="btn btn-primary">Primary</button> -->
         <div class="dropdown-content">
           <form id="change-password" class="changepass1">
             <input class="changepass1" type="password" name="credentials[old]" value="" placeholder="Old Password">
@@ -37,8 +34,8 @@
           <div class="dropdown">
             <li><a href="#landlord">Landlord</a></li>
             <div class="dropdown-content">
-              <div id=get-all-landlords>All Landlords</div>
-              <li><button id="create-landlord" type="submit" class="create-landlord">Create a Post</button></li>
+              <div id=get-all-landlords>All The Landlords</div>
+              <li><button id="create-landlord" type="submit" class="create-landlord">About your Landlord</button></li>
             </div>
           </div>
 
@@ -46,24 +43,25 @@
 
       <main>
 
-        <br><br>
-        <div id="message">
-        </div>
-        <br><br>
-        <div id="landlords_page" class="landlords_page">
-      <div id="landlords-div">
+
+    <div id="signfo" class="signfo">
+      <div class="signfor">
+        <form id="sign-up" class="sign-up">
+          <fieldset>
+            <legend>Sign Up Below</legend>
+            <input class="email-textbox" type="text" name="credentials[email]" placeholder="Email">
+            <br><br>
+            <input class="pass-textbox" type="password" name="credentials[password]" placeholder="Create Password">
+            <br><br>
+            <input class="pass-confir-textbox" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <br><br>
+            <button class="signup-button btn-default" type="submit" name="submit" value="Sign Up!">Sign Up!</button>
+          </fieldset>
+        </form>
       </div>
-      </div>
-        <br><br>
+      <br>
 
-<div id="pages_page" class="pages_page">
-  <div id="pages-div">
-  </div>
-</div>
-
-<br><br>
-
-        <div class="signform">
+      <div class="signform">
         <form id="sign-in" class="sign-in">
           <fieldset>
             <legend>Login Below</legend>
@@ -75,6 +73,32 @@
           </fieldset>
         </form>
       </div>
+      <br><br>
+      <div class="alllandlordsbutton" align=center>
+        <button id="alllandlords" type="submit" class="alllandlords btn-default">Check out all thr landlords!</button>
+      </div>
+
+    </div>
+
+    <br><br>
+
+        <br><br>
+        <div id="message">
+        </div>
+        <br><br>
+        <div id="landlords_page" class="landlords_page">
+      <div id="landlords-div">
+      </div>
+      </div>
+        <br><br>
+
+<div id="comments_page" class="comments_page">
+  <div id="comments-div">
+  </div>
+</div>
+
+<br><br>
+
       <br><br>
             <!--all the landlords-->
       <div class="alllandlordsbutton" align=center>

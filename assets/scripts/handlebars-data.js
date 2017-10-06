@@ -2,7 +2,7 @@ const landlordsHandlebars = function (name, address) {
   const landlordHandlebarsTemplate = require('./templates/posts-template.handlebars')
   const context = {
     'name': name,
-    'comment': comment
+    'address': address
   }
   const landlordTemplate = landlordHandlebarsTemplate(context)
   $('#landlord-div').append(landlordTemplate)
@@ -22,9 +22,7 @@ const commentHandlebars = function (subject, comment, rate) {
   $('#comment-div').append(html)
 }
 
-// template context for drpdwn/
-
-const dropdownHandlebars = function (title, dataId) {
+const dropdownHandlebars = function (subject, dataId) {
   const commentHandlebarsTemplate = require('./templates/comment-dropdown-list.handlebars')
   const context = {
 
