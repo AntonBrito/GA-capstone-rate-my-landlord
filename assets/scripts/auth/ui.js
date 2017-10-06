@@ -58,7 +58,7 @@ const getAllLandlordsSuccess = (data) => {
   for (let i = 0; i < data.landlords.length; i++) {
     const name = data.landlords[i].title
     const address = data.landlords[i].body
-    template.postsHandlebars(name, address, dataId)
+    template.postsHandlebars(name, address)
   }
   $('.landlordsEditButton, .landlordsDeleteButton').hide()
 }
@@ -76,8 +76,7 @@ const getAllMyLandlordsSuccess = (data) => {
   for (let i = 0; i < data.posts.length; i++) {
     const name = data.landlords[i].name
     const comment = data.landlords[i].comment
-    const dataId = data.landlords[i]._id
-    template.postsHandlebars(name, comment, dataId)
+    template.landlordsHandlebars(name, comment)
   }
 }
 
@@ -97,15 +96,14 @@ const getAllCommentsSuccess = (data) => {
 const getOneCommentSuccess = (data) => {
   console.log('succeeded in getOneCommentSuccess')
   // assign for edit or delete
-  app.page = data.comment
+  app.comment = data.comment
   console.log(app.comment)
-  $('#pcomments-div').empty()
+  $('#comments-div').empty()
   const subject = data.comment.subject
   const comment = data.comment.sections.comment
   const rate = data.comment.rate
-  const dataId = data.comment._id
-  console.log(subject + comment + rate + dataId)
-  template.pagesHandlebars(subject, comment, rate, dataId)
+  console.log(subject + comment + rate)
+  template.pagesHandlebars(subject, comment, rate)
 }
 
 const getAllCommentsFailure = (error) => {
@@ -183,7 +181,6 @@ const updateCommentSuccess = (data) => {
   const subject = data.comment.subject
   const comment = data.comment.comment
   const rate = data.comment.rate
-  const dataId = data.comment._id
   console.log(subject + comment + rate)
   template.commentsHandlebars(subject, comment, rate)
 }
@@ -218,6 +215,8 @@ module.exports = {
   changePasswordSuccess,
   logOutFailure,
   logOutSuccess,
+  getAllMyLandlordsSuccess,
+  getAllMyPLandlordsFailure,
   getAllLandlordsSuccess,
   getAllLandlordsFailure,
   getAllCommentsSuccess,
@@ -225,9 +224,11 @@ module.exports = {
   getOneCommentSuccess,
   getAllMyCommentsSuccess,
   getAllMyCommentsFailure,
+  createLandlordSuccess,
   createCommentSuccess,
   createCommentFailure,
   createLandlordFailure,
+  deleteCommentSuccess,
   deleteLandlordSuccess,
   deleteCommentFailure,
   deleteLandlordFailure,
