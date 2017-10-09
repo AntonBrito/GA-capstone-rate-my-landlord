@@ -13,7 +13,7 @@ body {
 }
 
 .dropbtn {
-  background-color: $azul;
+  background-color: $lightorrange;
   border: 0;
   color: $cream;
   cursor: pointer;
@@ -34,13 +34,13 @@ body {
 }
 
 .signin-button {
-  background-color:
+  background-color: $lightorrange;
   color: $cream;
   font-size: 20px;
 }
 
 .signup-button {
-  background-color:
+  background-color: $lightorrange;
   border-radius: 45px;
   color: $cream;
   font-size: 20px;
@@ -135,7 +135,7 @@ body {
 }
 
 .dropdown-content {
-  background-color: $lightgrey;
+  background-color: $lightgray;
   border-radius: 20px;
   display: none;
   min-width: 160px;
@@ -178,7 +178,7 @@ h1 {
 }
 
 .navbar {
-  background-color: $lightgrey;
+  background-color: $lightgray;
   font-size: 30px;
   text-align: center;
   word-spacing: 40px;
