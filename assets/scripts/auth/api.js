@@ -1,6 +1,6 @@
 'use strict'
 const app = require('./../app.js')
-const config.apiOrigin = require('./../config.apiOrigin.js')
+const config = require('./../config.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const signUp = (data) => {
