@@ -29,8 +29,6 @@ $(() => {
     $('#message').empty()
   })
 
-  // views
-  // landing page
   $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #update_Comment').hide()
 
   // landlords view

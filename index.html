@@ -13,11 +13,11 @@
     <body class="container-fluid">
       <header>
         <h1>Rate my LandLord</h1>
+
       <div class="dropdown">
         <button class="dropbtn setting">Settings</button>
-        <div class="dropbdown-content">
+        <div class="dropdown-content">
           <button class="changepass dropbtn">changePassword</button>
-          <!-- <button type="button" class="btn btn-primary">Primary</button> -->
         <div class="dropdown-content">
           <form id="change-password" class="changepass1">
             <input class="changepass1" type="password" name="credentials[old]" value="" placeholder="Old Password">
@@ -32,17 +32,40 @@
       <div class="navbar">
         <ul>
           <div class="dropdown">
-            <li><a href="#landlord">Landlord</a></li>
+            <li><a href="#landlords">Landlords</a></li>
             <div class="dropdown-content">
-              <div id=get-all-landlords>All The Landlords</div>
-              <li><button id="create-landlord" type="submit" class="create-landlord">About your Landlord</button></li>
+              <div id="get-every-landlords" class="get-every-landlords">All Landlords</div>
+              <div id="get-all-my-landlords" class="get-all-my-landlords">My Landlords</div>
             </div>
           </div>
-
-      </div>
+          <div class="dropdown">
+            <li><a href="#create">Post</a></li>
+            <div class="dropdown-content">
+              <li><button id="show-landlord-create" class="create-landlord">Landlords</button></li>
+              <li><button id="show-comment-create" class="show-comment-create">Comments</button></li>
+            </div>
+            </div>
+            <div class="dropdown">
+            <li><a href="#comments">Comments</a></li>
+            <div class="dropdown-content">
+              <div id="get-every-comments" class="show-comment-create">All Comments</div>
+            </div>
+          </div>
+          <li>
+            <div>
+              <form class="sign-out" id="signOUt">
+                <button id="sign-out" type="submit" class="signout-button btn-default"> Sign Out </button>
+              </form>
+            </div>
+          </li>
+          </ul>
+          </div>
+          <br>
 
       <main>
 
+        <div id="message">
+        </div>
 
     <div id="signfo" class="signfo">
       <div class="signfor">
@@ -75,7 +98,7 @@
       </div>
       <br><br>
       <div class="alllandlordsbutton" align=center>
-        <button id="alllandlords" type="submit" class="alllandlords btn-default">Check out all thr landlords!</button>
+        <button id="alllandlords" type="submit" class="alllandlords btn-default">Check out all the landlords!</button>
       </div>
 
     </div>
@@ -157,10 +180,10 @@
   <br></br>
           <!-- update comment-->
     <div id="update_comment" class="update_comment" align=center>
-          <form id=update_comment_title class="update_comment_title">
+          <form id=update-comments-subject class="update-comments-subject">
             <fieldset>
               <legend>Comment about your landlord</legend>
-              <input id="update-comment-title" class="comment-title" type="text" name="Subject" placeholder="Subject Here">
+              <input id="update-comments-subject" class="comment-subject" type="text" name="Subject" placeholder="Subject Here">
               <br><br>
               <textarea name="comment" placeholder="Comment Here" id="textbox" class="textbox"></textarea>
               <br><br>
@@ -173,6 +196,9 @@
         <br><br>
 
       </main>
+      <footer>
+          CopyRight & Design @Antonio Brito 2017-10-07
+      </footer>
 
     </body>
 </html>
