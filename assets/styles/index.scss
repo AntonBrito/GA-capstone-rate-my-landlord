@@ -29,7 +29,7 @@ body {
 
 .signout-button {
   border-radius: 45px;
-  color: $cream;
+  color: $bluesky;
   font-size: 20px;
 }
 
@@ -165,7 +165,7 @@ li {
 }
 
 h1 {
-  font-size: 120px;
+  font-size: 100px;
   text-align: center;
 }
 
@@ -258,6 +258,18 @@ textarea {
 
 .submit {
   border-radius: 45px;
-  color: $cream;
+  color: $bluesky;
   font-size: 20px;
+}
+
+.get-all-my-landlords {
+  background-color: $lightgray;
+}
+
+footer {
+  background-color: $bluesky;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 50px;
+  text-align: center;
 }

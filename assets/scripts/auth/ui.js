@@ -19,8 +19,8 @@ const signInSuccess = (data) => {
   console.log('signed in!')
   console.log(app.user)
   $('#signfo').hide()
-  $('#message').html('You Have Signed In!')
-  $('#posts_page').hide()
+  $('#message').html('You are Signed In!')
+  $('#landlords_page').hide()
 }
 
 const signInFailure = (error) => {
@@ -42,7 +42,7 @@ const logOutSuccess = (data) => {
   console.log(data)
   console.log('Succeded in logOutSuccess')
   $('#signfo').show()
-  $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #update_page').hide()
+  $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #update_comment').hide()
   $('#message').html('You Have Signed Out!')
   $('#listOfLandlords').empty()
 }
@@ -53,39 +53,39 @@ const logOutFailure = (error) => {
 }
 const getAllLandlordsSuccess = (data) => {
   console.log(data)
-  console.log('Successfully retrieved all posts by all users')
-  $('#post-div').empty()
+  console.log('Successfully retrieved all landlords by all users')
+  $('#landlords-div').empty()
   for (let i = 0; i < data.landlords.length; i++) {
     const name = data.landlords[i].title
     const address = data.landlords[i].body
-    template.postsHandlebars(name, address)
+    template.landlordHandlebars(name, address)
   }
   $('.landlordsEditButton, .landlordsDeleteButton').hide()
 }
 const getAllLandlordsFailure = (err) => {
   console.log(err)
-  console.log('Failed retieving all posts by all users')
+  console.log('Failed retieving all landlords by all users')
   $('#landlords-div').html('These Are Not The landlords You Are Looking For')
 }
 
 // we can dry this code out after crud functionality is done
-const getAllMyLandlordsSuccess = (data) => {
-  console.log(data)
-  console.log('Successfully retrieved all MY posts')
-  $('#post-div').empty()
-  for (let i = 0; i < data.posts.length; i++) {
-    const name = data.landlords[i].name
-    const comment = data.landlords[i].comment
-    template.landlordsHandlebars(name, comment)
-  }
-}
+// const getAllMyLandlordsSuccess = (data) => {
+//   console.log(data)
+//   console.log('Successfully retrieved all MY landlord')
+//   $('#landlord-div').empty()
+//   for (let i = 0; i < data.landlords.length; i++) {
+//     const name = data.landlords[i].name
+//     const comment = data.landlords[i].comment
+//     template.landlordsHandlebars(name, comment)
+//   }
+// }
 
-// not being called by .catch in events.js
-const getAllMyPLandlordsFailure = (error) => {
-  console.log('Failed')
-  $('#landlord-div').html('These Are Not The landlords You Are Looking For')
-  console.log(error)
-}
+// // not being called by .catch in events.js
+// const getAllMyLandlordsFailure = (error) => {
+//   console.log('Failed')
+//   $('#landlord-div').html('These Are Not The landlords You Are Looking For')
+//   console.log(error)
+// }
 
 const getAllCommentsSuccess = (data) => {
   app.comments = data.comments
@@ -103,7 +103,7 @@ const getOneCommentSuccess = (data) => {
   const comment = data.comment.sections.comment
   const rate = data.comment.rate
   console.log(subject + comment + rate)
-  template.pagesHandlebars(subject, comment, rate)
+  template.commentsHandlebars(subject, comment, rate)
 }
 
 const getAllCommentsFailure = (error) => {
@@ -118,7 +118,7 @@ const getAllMyCommentsSuccess = (data) => {
   console.log('Succeded')
   $('#listOfComments').empty()
   for (let i = 0; i < data.comments.length; i++) {
-    // data-id = data.pages[i]._id
+    // data-id = data.comments[i]._id
     const dataId = data.comments[i]._id
     console.log('dataId === ' + dataId)
     const subject = data.comments[i].title
@@ -215,8 +215,6 @@ module.exports = {
   changePasswordSuccess,
   logOutFailure,
   logOutSuccess,
-  getAllMyLandlordsSuccess,
-  getAllMyPLandlordsFailure,
   getAllLandlordsSuccess,
   getAllLandlordsFailure,
   getAllCommentsSuccess,

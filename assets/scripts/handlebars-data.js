@@ -10,7 +10,7 @@ const landlordsHandlebars = function (name, address) {
 
 // template context for pages/
 
-const commentHandlebars = function (subject, comment, rate) {
+const commentsHandlebars = function (subject, comment, rate) {
   const commentHandlebarsTemplate = require('./templates/comments-template.handlebars')
   const context = {
     'subject': subject,
@@ -35,6 +35,6 @@ const dropdownHandlebars = function (subject, dataId) {
 
 module.exports = {
   landlordsHandlebars,
-  commentHandlebars,
+  commentsHandlebars,
   dropdownHandlebars
 }
