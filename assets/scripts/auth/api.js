@@ -1,11 +1,11 @@
 'use strict'
 const app = require('./../app.js')
-const config = require('./../config.js')
+const config.apiOrigin = require('./../config.apiOrigin.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const signUp = (data) => {
   return $.ajax({
-    url: config + '/sign-up/',
+    url: config.apiOrigin + '/sign-up/',
     method: 'POST',
     data
   })
@@ -13,7 +13,7 @@ const signUp = (data) => {
 
 const signIn = (data) => {
   return $.ajax({
-    url: config + '/sign-in/',
+    url: config.apiOrigin + '/sign-in/',
     method: 'POST',
     data
   })
@@ -23,7 +23,7 @@ const changePassword = (data) => {
   console.log(data.credentials.old)
   console.log(data.credentials.new)
   return $.ajax({
-    url: config + '/change-password/' + app.user.id,
+    url: config.apiOrigin + '/change-password/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
@@ -40,7 +40,7 @@ const changePassword = (data) => {
 const signOut = (data) => {
   console.log(data)
   return $.ajax({
-    url: config + '/sign-out/' + app.user.id,
+    url: config.apiOrigin + '/sign-out/' + app.user.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -50,14 +50,14 @@ const signOut = (data) => {
 
 const getAllLandlords = () => {
   return $.ajax({
-    url: config + '/landlords',
+    url: config.apiOrigin + '/landlords',
     method: 'GET'
   })
 }
 
 const getAllMyLandlord = () => {
   return $.ajax({
-    url: config + '/landlord/' + app.user.id + '/my_landlord',
+    url: config.apiOrigin + '/landlord/' + app.user.id + '/my_landlord',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -67,7 +67,7 @@ const getAllMyLandlord = () => {
 
 const createLandlord = (data) => {
   return $.ajax({
-    url: config + '/landlords',
+    url: config.apiOrigin + '/landlords',
     method: 'LANDLORD',
     data: {
       'landlord': {
@@ -85,7 +85,7 @@ const updateLandlord = (data, dataId) => {
   console.log('update landlord data = ' + data)
   console.log('update landlord dataId = ' + dataId)
   return $.ajax({
-    url: config + '/landlords/' + dataId,
+    url: config.apiOrigin + '/landlords/' + dataId,
     method: 'PATCH',
     data: {
       'landlord': {
@@ -101,7 +101,7 @@ const updateLandlord = (data, dataId) => {
 
 const deleteLandlord = (dataId) => {
   return $.ajax({
-    url: config + '/landlords/' + dataId,
+    url: config.apiOrigin + '/landlords/' + dataId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -111,14 +111,14 @@ const deleteLandlord = (dataId) => {
 
 const getAllComments = () => {
   return $.ajax({
-    url: config + '/comments',
+    url: config.apiOrigin + '/comments',
     method: 'GET'
   })
 }
 
 const getAllMyComments = () => {
   return $.ajax({
-    url: config + '/comments/' + app.user.id + '/my_comments',
+    url: config.apiOrigin + '/comments/' + app.user.id + '/my_comments',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -129,7 +129,7 @@ const getAllMyComments = () => {
 const getOneComment = (dataId) => {
   console.log('api.js dataId =' + dataId)
   return $.ajax({
-    url: config + '/comments/' + dataId,
+    url: config.apiOrigin + '/comments/' + dataId,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -139,7 +139,7 @@ const getOneComment = (dataId) => {
 
 const deleteComment = (dataId) => {
   return $.ajax({
-    url: config + '/comments/' + dataId,
+    url: config.apiOrigin + '/comments/' + dataId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -149,7 +149,7 @@ const deleteComment = (dataId) => {
 
 const createComment = (data) => {
   return $.ajax({
-    url: config + '/comments',
+    url: config.apiOrigin + '/comments',
     method: 'POST',
     data: {
       'comment': {
@@ -170,7 +170,7 @@ const updateComment = (data, dataId) => {
   console.log('update comment data = ' + data)
   console.log('update lanlord dataId = ' + dataId)
   return $.ajax({
-    url: config + '/comment/' + dataId,
+    url: config.apiOrigin + '/comment/' + dataId,
     method: 'PATCH',
     data: {
       'comment': {
