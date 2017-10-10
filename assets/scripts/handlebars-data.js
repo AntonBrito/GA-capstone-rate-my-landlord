@@ -1,5 +1,5 @@
 const landlordsHandlebars = function (name, address) {
-  const landlordHandlebarsTemplate = require('./templates/posts-template.handlebars')
+  const landlordHandlebarsTemplate = require('./templates/landlord-template.handlebars')
   const context = {
     'name': name,
     'address': address
