@@ -42,7 +42,7 @@ const logOutSuccess = (data) => {
   console.log(data)
   console.log('Succeded in logOutSuccess')
   $('#signfo').show()
-  $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #update_page').hide()
+  $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #update_comment').hide()
   $('#message').html('You Have Signed Out!')
   $('#listOfLandlords').empty()
 }
