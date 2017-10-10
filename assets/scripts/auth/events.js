@@ -3,16 +3,28 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const app = require('../app.js')
 // page funtionality //
 
 // events //
+const signUpSuccess = (data) => {
+  app.user = data.user
+  console.log(data)
+  console.log('signed up Successfully')
+  // console.log('I did something in ui.js!')
+}
+
+const signUpFailure = (error) => {
+  console.log(error)
+  console.log('failed to signUp')
+}
 
 const onSignUp = function (event) {
-  const data = getFormFields(this)
   event.preventDefault()
+  const data = getFormFields(this)
   api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+    .then(signUpSuccess)
+    .catch(signUpFailure)
 }
 
 const onSignIn = function (event) {
@@ -49,6 +61,7 @@ const onGetAllLandlords = function (event) {
 }
 
 const onGetAllMyLandlords = function (event) {
+  console.log(app.user)
   event.preventDefault()
   api.getAllMyLandlords()
     .then(ui.getAllMyLandlordsSuccess)

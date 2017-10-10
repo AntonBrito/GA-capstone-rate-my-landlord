@@ -4,24 +4,19 @@ const config = require('./../config.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const signUp = function (data) {
+  console.log('hits api.signUp')
   console.log(data)
   return $.ajax({
-    url: app.host + '/sign-up',
-    headers: {'header': 'Content-Type: application/json'},
+    url: app.host + '/sign-up/',
     method: 'POST',
-    data: {
-      'credentials': {
-        'email': data.credentials.email,
-        'password': data.credentials.password,
-        'password_confirmation': data.credentials.password
-      }
-    }
+    data
   })
 }
 
-const signIn = (data) => {
+const signIn = function (data) {
+  console.log(data)
   return $.ajax({
-    url: config.apiOrigin + '/sign-in/',
+    url: app.host + '/sign-in/',
     method: 'POST',
     data: {
       'credentials': {
@@ -68,9 +63,10 @@ const getAllLandlords = () => {
   })
 }
 
-const getAllMyLandlord = () => {
+const getAllMyLandlords = () => {
+  console.log(app.user)
   return $.ajax({
-    url: config.apiOrigin + '/landlord/' + app.user.id + '/my_landlord',
+    url: config.apiOrigin + '/my-landlord/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -207,7 +203,7 @@ module.exports = {
   signOut,
   getFormFields,
   getAllLandlords,
-  getAllMyLandlord,
+  getAllMyLandlords,
   createLandlord,
   updateLandlord,
   deleteLandlord,

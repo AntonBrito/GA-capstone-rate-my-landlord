@@ -1,5 +1,5 @@
 const landlordsHandlebars = function (name, address) {
-  const landlordHandlebarsTemplate = require('./templates/landlord-template.handlebars')
+  const landlordHandlebarsTemplate = require('./landlord-template.handlebars')
   const context = {
     'name': name,
     'address': address
@@ -11,26 +11,24 @@ const landlordsHandlebars = function (name, address) {
 // template context for pages/
 
 const commentsHandlebars = function (subject, comment, rate) {
-  const commentHandlebarsTemplate = require('./templates/comments-template.handlebars')
+  const commentHandlebarsTemplate = require('./comments-template.handlebars')
   const context = {
     'subject': subject,
     'comment': comment,
     'rate': rate
   }
   console.log('info from handlebars' + subject + comment + rate)
-  const html = commentHandlebarsTemplate(context)
-  $('#comment-div').append(html)
+  const templateFilled = commentHandlebarsTemplate(context)
+  $('#comment-div').append(templateFilled)
 }
 
 const dropdownHandlebars = function (subject, dataId) {
-  const commentHandlebarsTemplate = require('./templates/comment-dropdown-list.handlebars')
+  const commentHandlebarsTemplate = require('./comments-dropdown-list.handlebars')
   const context = {
-
     'subject': subject
-
   }
-  const html = commentHandlebarsTemplate(context)
-  $('#listOfComments').append(html)
+  const templateFilled = commentHandlebarsTemplate(context)
+  $('#listOfComments').append(templateFilled)
 }
 
 module.exports = {

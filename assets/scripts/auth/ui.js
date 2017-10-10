@@ -3,16 +3,17 @@ const app = require('../app.js')
 const template = require('../handlebars-data')
 // const events = require('./events.js')
 
-const signUpSuccess = (data) => {
-  console.log(data)
-  console.log('signed up Successfully')
-  // console.log('I did something in ui.js!')
-}
-
-const signUpFailure = (error) => {
-  console.log(error)
-  console.log('failed to signUp')
-}
+// const signUpSuccess = (data) => {
+//   app.user = data.user
+//   console.log(data)
+//   console.log('signed up Successfully')
+//   // console.log('I did something in ui.js!')
+// }
+//
+// const signUpFailure = (error) => {
+//   console.log(error)
+//   console.log('failed to signUp')
+// }
 
 const signInSuccess = (data) => {
   app.user = data.user
@@ -58,7 +59,7 @@ const getAllLandlordsSuccess = (data) => {
   for (let i = 0; i < data.landlords.length; i++) {
     const name = data.landlords[i].title
     const address = data.landlords[i].body
-    template.landlordHandlebars(name, address)
+    template.landlordsHandlebars(name, address)
   }
   $('.landlordsEditButton, .landlordsDeleteButton').hide()
 }
@@ -207,8 +208,8 @@ const updateLandlordFailure = (error) => {
 }
 
 module.exports = {
-  signUpFailure,
-  signUpSuccess,
+  // signUpFailure,
+  // signUpSuccess,
   signInSuccess,
   signInFailure,
   changePasswordfailure,
