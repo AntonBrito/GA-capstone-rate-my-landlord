@@ -2,7 +2,8 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com'
+    production: 'https://rate-mylandlord.herokuapp.com/',
+    development: 'https://localhost:4741'
   }
 }
 
