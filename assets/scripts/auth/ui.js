@@ -1,19 +1,19 @@
 'use strict'
 const app = require('../app.js')
 const template = require('../handlebars-data')
-// const events = require('./events.js')
+const events = require('./events.js')
 
-// const signUpSuccess = (data) => {
-//   app.user = data.user
-//   console.log(data)
-//   console.log('signed up Successfully')
-//   // console.log('I did something in ui.js!')
-// }
-//
-// const signUpFailure = (error) => {
-//   console.log(error)
-//   console.log('failed to signUp')
-// }
+const signUpSuccess = (data) => {
+  app.user = data.user
+  console.log(data)
+  console.log('signed up Successfully')
+  // console.log('I did something in ui.js!')
+}
+
+const signUpFailure = (error) => {
+  console.log(error)
+  console.log('failed to signUp')
+}
 
 const signInSuccess = (data) => {
   app.user = data.user
@@ -70,23 +70,22 @@ const getAllLandlordsFailure = (err) => {
 }
 
 // we can dry this code out after crud functionality is done
-// const getAllMyLandlordsSuccess = (data) => {
-//   console.log(data)
-//   console.log('Successfully retrieved all MY landlord')
-//   $('#landlord-div').empty()
-//   for (let i = 0; i < data.landlords.length; i++) {
-//     const name = data.landlords[i].name
-//     const comment = data.landlords[i].comment
-//     template.landlordsHandlebars(name, comment)
-//   }
-// }
+const getMyLandlordsSuccess = (data) => {
+  console.log(data)
+  console.log('Successfully retrieved all MY landlord')
+  $('#landlords-div').empty()
+  for (let i = 0; i < data.landlords.length; i++) {
+    const name = data.landlords[i].name
+    const comment = data.landlords[i].comment
+    template.landlordsHandlebars(name, comment)
+  }
+}
 
-// // not being called by .catch in events.js
-// const getAllMyLandlordsFailure = (error) => {
-//   console.log('Failed')
-//   $('#landlord-div').html('These Are Not The landlords You Are Looking For')
-//   console.log(error)
-// }
+const getMyLandlordsFailure = (error) => {
+  console.log('Failed')
+  $('#landlord-div').html('These Are Not The landlords You Are Looking For')
+  console.log(error)
+}
 
 const getAllCommentsSuccess = (data) => {
   app.comments = data.comments
@@ -145,7 +144,7 @@ const createCommentFailure = (error) => {
 
 const createLandlordSuccess = (data) => {
   console.log(data)
-  console.log('Succeded in createCommentSuccess')
+  console.log('Succeded in createLandlordSuccess')
   $('textarea').val('')
 }
 
@@ -208,14 +207,16 @@ const updateLandlordFailure = (error) => {
 }
 
 module.exports = {
-  // signUpFailure,
-  // signUpSuccess,
+  signUpFailure,
+  signUpSuccess,
   signInSuccess,
   signInFailure,
   changePasswordfailure,
   changePasswordSuccess,
   logOutFailure,
   logOutSuccess,
+  getMyLandlordsSuccess,
+  getMyLandlordsFailure,
   getAllLandlordsSuccess,
   getAllLandlordsFailure,
   getAllCommentsSuccess,

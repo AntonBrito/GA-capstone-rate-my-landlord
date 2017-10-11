@@ -60,18 +60,18 @@ const onGetAllLandlords = function (event) {
     .catch(ui.getAllLandlordsFailure)
 }
 
-const onGetAllMyLandlords = function (event) {
+const onGetMyLandlords = function (event) {
   console.log(app.user)
   event.preventDefault()
-  api.getAllMyLandlords()
-    .then(ui.getAllMyLandlordsSuccess)
-    .catch(ui.getAllMyLandlordsFailure)
+  api.getMyLandlords()
+    .then(ui.getMyLandlordsSuccess)
+    .catch(ui.getMyLandlordsFailure)
 }
 
 const onCreateLandlord = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  api.createPost(data)
+  api.createLandlord(data)
     .then(ui.createLandlordSuccess)
     .catch(ui.createLandlordFailure)
 }
@@ -168,7 +168,7 @@ module.exports = {
   onSignOut,
   onChangePassword,
   onGetAllLandlords,
-  onGetAllMyLandlords,
+  onGetMyLandlords,
   onCreateLandlord,
   onUpdateLandlordSaveId,
   onUpdateLandlord,

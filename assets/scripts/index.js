@@ -15,7 +15,7 @@ $(() => {
   $('#changePassword').on('submit', events.onChangePassword)
   $('#alllandlords').on('click', events.onGetAllLandlords)
   $('#get-every-landlords').on('click', events.onGetAllLandlords)
-  $('#get-all-my-landlords').on('click', events.onGetAllMyLandlords)
+  $('#get-my-landlords').on('click', events.onGetMyLandlords)
   $('#landlord_name').on('submit', events.onCreateLandlord)
   $('#comment_subject').on('submit', events.onCreateComment)
   $('#random').on('click', events.onGetAllMyComments)

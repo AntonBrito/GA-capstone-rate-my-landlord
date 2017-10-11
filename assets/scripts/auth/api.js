@@ -63,10 +63,10 @@ const getAllLandlords = () => {
   })
 }
 
-const getAllMyLandlords = () => {
+const getMyLandlords = () => {
   console.log(app.user)
   return $.ajax({
-    url: config.apiOrigin + '/my-landlord/',
+    url: config.apiOrigin + '/my-landlords/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -75,9 +75,10 @@ const getAllMyLandlords = () => {
 }
 
 const createLandlord = (data) => {
+  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/landlords',
-    method: 'LANDLORD',
+    method: 'POST',
     data: {
       'landlord': {
         'name': data.name,
@@ -203,7 +204,7 @@ module.exports = {
   signOut,
   getFormFields,
   getAllLandlords,
-  getAllMyLandlords,
+  getMyLandlords,
   createLandlord,
   updateLandlord,
   deleteLandlord,
