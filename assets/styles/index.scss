@@ -99,9 +99,8 @@ body {
 
 .landlords_page {
   text-align: center;
-  word-spacing: 15px;
+  word-spacing: 1px;
 }
-
 
 .alllandlords {
   border: 2px solid $cream;
@@ -120,11 +119,13 @@ body {
   width: 10%;
 }
 
-.get-all-my-landlords {
-  font-size: 20px;
+.get-my-landlords {
+  font-size: 10px;
+  word-spacing: 1px;
 }
 
-.comments_page {
+
+.comments-page {
   font-size: 15px;
   text-align: center;
 }

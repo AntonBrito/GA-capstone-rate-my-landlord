@@ -37,7 +37,7 @@ $(() => {
     $('#message').empty()
     $('#comments_page, #create_landlord, #create_comment, #update_landlord, #update_comment').hide()
   })
-  $('#get-all-my-landlords').on('click', function () {
+  $('#get-my-landlords').on('click', function () {
     $('#landlords_page').show()
     $('#message').empty()
     $('#comments_page, #create_landlord, #create_comment, #update_landlord, #update_comment').hide()

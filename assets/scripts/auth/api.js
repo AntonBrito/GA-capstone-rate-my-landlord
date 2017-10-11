@@ -76,12 +76,13 @@ const getMyLandlords = () => {
 
 const createLandlord = (data) => {
   console.log(data)
+  debugger
   return $.ajax({
     url: config.apiOrigin + '/landlords',
     method: 'POST',
     data: {
       'landlord': {
-        'name': data.name,
+        'firstname': data.firstname,
         'address': data.address
       }
     },

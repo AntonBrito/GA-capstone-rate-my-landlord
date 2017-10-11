@@ -22,6 +22,7 @@ const signInSuccess = (data) => {
   $('#signfo').hide()
   $('#message').html('You are Signed In!')
   $('#landlords_page').hide()
+  $('#comments_page').hide()
 }
 
 const signInFailure = (error) => {
@@ -39,7 +40,7 @@ const changePasswordfailure = (error) => {
   $('#message').html('Invalid OLD password.')
 }
 
-const logOutSuccess = (data) => {
+const signOutSuccess = (data) => {
   console.log(data)
   console.log('Succeded in logOutSuccess')
   $('#signfo').show()
@@ -48,7 +49,7 @@ const logOutSuccess = (data) => {
   $('#listOfLandlords').empty()
 }
 
-const logOutFailure = (error) => {
+const signOutFailure = (error) => {
   console.log(error)
   console.log('Failed in logOutFailure')
 }
@@ -57,8 +58,8 @@ const getAllLandlordsSuccess = (data) => {
   console.log('Successfully retrieved all landlords by all users')
   $('#landlords-div').empty()
   for (let i = 0; i < data.landlords.length; i++) {
-    const name = data.landlords[i].title
-    const address = data.landlords[i].body
+    const name = data.landlords[i].firstname
+    const address = data.landlords[i].address
     template.landlordsHandlebars(name, address)
   }
   $('.landlordsEditButton, .landlordsDeleteButton').hide()
@@ -75,7 +76,7 @@ const getMyLandlordsSuccess = (data) => {
   console.log('Successfully retrieved all MY landlord')
   $('#landlords-div').empty()
   for (let i = 0; i < data.landlords.length; i++) {
-    const name = data.landlords[i].name
+    const name = data.landlords[i].firstname
     const comment = data.landlords[i].comment
     template.landlordsHandlebars(name, comment)
   }
@@ -83,7 +84,7 @@ const getMyLandlordsSuccess = (data) => {
 
 const getMyLandlordsFailure = (error) => {
   console.log('Failed')
-  $('#landlord-div').html('These Are Not The landlords You Are Looking For')
+  $('#landlords-div').html('These Are Not The landlords You Are Looking For')
   console.log(error)
 }
 
@@ -150,28 +151,28 @@ const createLandlordSuccess = (data) => {
 
 const createLandlordFailure = (error) => {
   console.log(error)
-  console.log('Failed in createLandlordFailure')
+  console.log('Failed in create Landlord Failure')
 }
 
 const deleteCommentSuccess = (data) => {
   console.log(data)
-  console.log('Succeded in deleteCommentSuccess')
+  console.log('Succeded in delete Comment Success')
   $('#comment-div').empty()
 }
 
 const deleteCommentFailure = (error) => {
   console.log(error)
-  console.log('Failed in deleteCommentFailure')
+  console.log('Failed in delete Comment Failure')
 }
 
 const deleteLandlordSuccess = (data) => {
   console.log(data)
-  console.log('Succeded in deleteLandlordSuccess')
+  console.log('Succeded in delete Landlord Success')
 }
 
 const deleteLandlordFailure = (error) => {
   console.log(error)
-  console.log('Failed in deleteLandlordFailure')
+  console.log('Failed in delete Landlord Failure')
 }
 
 const updateCommentSuccess = (data) => {
@@ -193,7 +194,7 @@ const updateCommentFailure = (error) => {
 const updateLandlordSuccess = (data) => {
   console.log(data)
   console.log('Succeded in deleteLandlordSuccess')
-  $('#lanlord-div').empty()
+  $('#lanlords-div').empty()
   for (let i = 0; i < data.landlord.length; i++) {
     const name = data.landlord[i].name
     const comment = data.landlord[i].body
@@ -213,8 +214,8 @@ module.exports = {
   signInFailure,
   changePasswordfailure,
   changePasswordSuccess,
-  logOutFailure,
-  logOutSuccess,
+  signOutFailure,
+  signOutSuccess,
   getMyLandlordsSuccess,
   getMyLandlordsFailure,
   getAllLandlordsSuccess,

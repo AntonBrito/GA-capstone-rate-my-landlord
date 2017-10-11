@@ -5,7 +5,7 @@ const landlordsHandlebars = function (name, address) {
     'address': address
   }
   const landlordTemplate = landlordHandlebarsTemplate(context)
-  $('#landlord-div').append(landlordTemplate)
+  $('#landlords-div').append(landlordTemplate)
 }
 
 // template context for pages/
