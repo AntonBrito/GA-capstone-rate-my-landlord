@@ -4,7 +4,6 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 
 const signUp = function (data) {
   console.log(data)
-  debugger
   return $.ajax({
     url: app.host + '/sign-up',
     headers: {'header': 'Content-Type: application/json'},
