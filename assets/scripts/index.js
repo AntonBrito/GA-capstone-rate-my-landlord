@@ -17,7 +17,7 @@ $(() => {
   $('#get-every-landlords').on('click', events.onGetAllLandlords)
   $('#get-my-landlords').on('click', events.onGetMyLandlords)
   $('#landlord_name').on('submit', events.onCreateLandlord)
-  $('#comment_subject').on('submit', events.onCreateComment)
+  $('#comment_form').on('submit', events.onCreateComment)
   $('#random').on('click', events.onGetAllMyComments)
   $('#update_landlord_form').on('submit', events.onUpdateLandlord)
   $('#update_comment_form').on('submit', events.onUpdateComment)
@@ -71,7 +71,7 @@ $(document).on('click', '.landlordsDeleteButton', events.onDeleteLandlord)
 $(document).on('click', '.commentEditButton', function () {
   $('#update_comments').show()
 })
-$(document).on('click', '.postsEditButton', function () {
+$(document).on('click', '.landlordEditButton', function () {
   $('#update_landlord').show()
 })
 

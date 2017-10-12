@@ -77,7 +77,7 @@ const getMyLandlordsSuccess = (data) => {
   $('#landlords-div').empty()
   for (let i = 0; i < data.landlords.length; i++) {
     const name = data.landlords[i].firstname
-    const comment = data.landlords[i].comment
+    const comment = data.landlords[i].comments
     template.landlordsHandlebars(name, comment)
   }
 }

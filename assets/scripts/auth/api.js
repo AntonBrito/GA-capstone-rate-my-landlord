@@ -76,7 +76,6 @@ const getMyLandlords = () => {
 
 const createLandlord = (data) => {
   console.log(data)
-  debugger
   return $.ajax({
     url: config.apiOrigin + '/landlords',
     method: 'POST',
@@ -159,16 +158,16 @@ const deleteComment = (dataId) => {
 }
 
 const createComment = (data) => {
+  console.log(data)
+  console.log('cret comment')
   return $.ajax({
     url: config.apiOrigin + '/comments',
     method: 'POST',
     data: {
-      'comment': {
+      'comments': {
         'subject': data.subject,
-        'sections': {
-          'comment': data.body,
-          'rate': data.rate
-        }
+        'comment': data.comment,
+        'rate': data.rate
       }
     },
     headers: {
@@ -184,12 +183,10 @@ const updateComment = (data, dataId) => {
     url: config.apiOrigin + '/comment/' + dataId,
     method: 'PATCH',
     data: {
-      'comment': {
-        'subject': data.title,
-        'sections': {
-          'comment': data.comment,
-          'rate': data.rate
-        }
+      'comments': {
+        'subject': data.subject,
+        'comment': data.comment,
+        'rate': data.rate
       }
     },
     headers: {
