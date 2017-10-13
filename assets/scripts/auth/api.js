@@ -7,7 +7,7 @@ const signUp = function (data) {
   console.log('hits api.signUp')
   console.log(data)
   return $.ajax({
-    url: app.host + '/sign-up/',
+    url: config.apiOrigin + '/sign-up/',
     method: 'POST',
     data
   })
@@ -16,7 +16,7 @@ const signUp = function (data) {
 const signIn = function (data) {
   console.log(data)
   return $.ajax({
-    url: app.host + '/sign-in/',
+    url: config.apiOrigin + '/sign-in/',
     method: 'POST',
     data: {
       'credentials': {
