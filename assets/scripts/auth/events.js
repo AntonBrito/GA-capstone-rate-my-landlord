@@ -96,9 +96,10 @@ const onUpdateLandlord = function (event) {
 }
 
 const onDeleteLandlord = function (event) {
-  const dataId = this.getAttribute('data-id')
+  const data = this.getAttribute('data')
   event.preventDefault()
-  api.deleteLandlord(dataId)
+  debugger
+  api.deleteLandlord(data)
     .then(ui.deleteLandlordSuccess)
     .catch(ui.deleteLandlordFailure)
 }

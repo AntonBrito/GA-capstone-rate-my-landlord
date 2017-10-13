@@ -69,11 +69,11 @@ $(document).on('click', '.landlordEditButton', events.onUpdateLandlordSaveId)
 $(document).on('click', '.commentEditButton', events.onUpdateCommentSaveId)
 $(document).on('click', '.show-comment-create', events.onGetAllComments)
 $(document).on('click', '.commentsDeleteButton', events.onDeleteComment)
-$(document).on('click', '.landlordsDeleteButton', events.onDeleteLandlord)
+$(document).on('click', '.landlordDeleteButton', events.onDeleteLandlord)
 $(document).on('click', '.commentEditButton', function () {
-  $('#update_comments').show()
+  $('#update_comments-subject').show()
 })
-$(document).on('click', '.landlordsEditButton', function () {
+$(document).on('click', '.landlordEditButton', function () {
   $('#update_landlord').show()
 })
 

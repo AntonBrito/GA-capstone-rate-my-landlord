@@ -109,9 +109,9 @@ const updateLandlord = (data, dataId) => {
   })
 }
 
-const deleteLandlord = (dataId) => {
+const deleteLandlord = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/landlords/' + dataId,
+    url: config.apiOrigin + '/landlords/' + data.landlord.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token

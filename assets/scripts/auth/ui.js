@@ -7,7 +7,7 @@ const signUpSuccess = (data) => {
   app.user = data.user
   console.log(data)
   console.log('signed up Successfully')
-  $('#update_comment').hide()
+  $('#update_comments-subject').hide()
   // console.log('I did something in ui.js!')
 }
 
@@ -77,6 +77,7 @@ const getMyLandlordsSuccess = (data) => {
   console.log(data)
   console.log('Successfully retrieved all MY landlord')
   $('#landlords-div').empty()
+  $('#empty-comments-div').show()
   for (let i = 0; i < data.landlords.length; i++) {
     const name = data.landlords[i].firstname
     const comment = data.landlords[i].comments
@@ -121,7 +122,7 @@ const getAllCommentsFailure = (error) => {
 }
 
 const getAllMyCommentsSuccess = (data) => {
-  console.log('I am getAllMyCommentsSuccess')
+  console.log('I getAllMyCommentsSuccess')
   console.log(data)
   console.log('Succeded')
   $('#listOfComments').empty()
