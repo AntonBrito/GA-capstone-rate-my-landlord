@@ -10,17 +10,15 @@ const landlordsHandlebars = function (name, address) {
 
 // template context for pages/
 
-const commentsHandlebars = function (landlord_id, subject, comment, rate) {
+const commentsHandlebars = function (subject, comment, rate) {
   const commentHandlebarsTemplate = require('./comments-template.handlebars')
   const context = {
     'subject': subject,
     'comment': comment,
-    'rate': rate,
-    'landlord_id': landlord_id
+    'rate': rate
   }
-  console.log('info from handlebars' + subject + comment + rate)
   const templateFilled = commentHandlebarsTemplate(context)
-  $('#comments-div').append(templateFilled)
+  $('#empty-comments-div').append(templateFilled)
 }
 
 const dropdownHandlebars = function (subject, dataId) {

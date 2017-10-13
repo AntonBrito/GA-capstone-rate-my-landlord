@@ -33,7 +33,6 @@ const onSignIn = function (event) {
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then(onGetAllMyComments)
     .catch(ui.signInFailure)
 }
 
@@ -111,8 +110,9 @@ const onGetAllComments = function (event) {
     .catch(ui.getAllCommentsFailure)
 }
 
-const onGetAllMyComments = function () {
-  // event.preventDefault()
+const onGetAllMyComments = function (event) {
+  event.preventDefault()
+  console.log(event)
   api.getAllMyComments()
     .then(ui.getAllMyCommentsSuccess)
     .catch(ui.getAllMyCommentsFailure)
@@ -129,7 +129,6 @@ const onGetOneComment = function (event) {
 
 const onCreateComment = function (event) {
   const data = getFormFields(this)
-  debugger
   console.log('comment to create')
   console.log(data)
   event.preventDefault()

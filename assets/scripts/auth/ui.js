@@ -1,7 +1,7 @@
 'use strict'
 const app = require('../app.js')
 const template = require('../handlebars-data')
-const events = require('./events.js')
+// const events = require('./events.js')
 
 const signUpSuccess = (data) => {
   app.user = data.user
@@ -123,16 +123,14 @@ const getAllCommentsFailure = (error) => {
 const getAllMyCommentsSuccess = (data) => {
   console.log('I am getAllMyCommentsSuccess')
   console.log(data)
-  console.log('app === ' + app.page)
   console.log('Succeded')
   $('#listOfComments').empty()
   for (let i = 0; i < data.comments.length; i++) {
-    // data-id = data.comments[i]._id
-    console.log(data.comments[i])
     const dataId = data.comments[i].id
-    console.log('dataId === ' + dataId)
-    const subject = data.comments[i].title
-    template.dropdownHandlebars(subject, dataId)
+    const subject = data.comments[i].subject
+    const comment = data.comment[i].comment
+    const rate = data.comment[i].rate
+    template.commentsHandlebars(subject, comment, rate, dataId)
   }
 }
 

@@ -18,8 +18,8 @@ $(() => {
   $('#get-my-landlords').on('click', events.onGetMyLandlords)
   $('#landlord_name').on('submit', events.onCreateLandlord)
   $('#comment_form').on('submit', events.onCreateComment)
-  $('#random').on('click',
-    events.onGetAllMyComments)
+  // $('#random').on('click',
+  //   events.onGetAllMyComments)
   $('#get-every-comments').on('click', events.onGetAllMyComments)
   $('#update_landlord_form').on('submit', events.onUpdateLandlord)
   $('#update_comment_form').on('submit', events.onUpdateComment)
@@ -31,30 +31,30 @@ $(() => {
     $('#message').empty()
   })
 
-  $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #update_Comment').hide()
+  $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #update-comments-subject').hide()
 
   // landlords view
   $('#get-every-landlords').on('click', function () {
     $('#landlords_page').show()
     $('#message').empty()
-    $('#comments_page, #create_landlord, #create_comment, #update_landlord, #update_comment').hide()
+    $('#comments_page, #create_landlord, #create_comment, #update_landlord, #update-comments-subject').hide()
   })
   $('#get-my-landlords').on('click', function () {
     $('#landlords_page').show()
     $('#message').empty()
-    $('#comments_page, #create_landlord, #create_comment, #update_landlord, #update_comment').hide()
+    $('#comments_page, #create_landlord, #create_comment, #update_landlord, #update-comments-subject').hide()
   })
   // comments view
-  $('#listOfComments').on('click', function () {
+  $('#get-every-comments').on('click', function () {
     $('#comments_page').show()
     $('#message').empty()
-    $('#landlords_page, #create_landlord, #create_comment, #update_landlords, #update_comments').hide()
+    $('#landlords_page, #create_landlord, #create_comment, #update_landlords, #update-comments-subject').hide()
   })
   // create landlords view
   $('#show-landlord-create').on('click', function () {
     $('#create_landlord').show()
     $('#message').empty()
-    $('#landlords_page, #comments_page, #create_comment, #update_landlord, #update_comment').hide()
+    $('#landlords_page, #comments_page, #create_comment, #update_landlord, #update-comments-subject').hide()
   })
 
   // create comments view

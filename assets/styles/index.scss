@@ -3,7 +3,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~./custom';
 
 #comments-div {
+  font-size: 10px;
   border: 2px, solid, black;
+}
+
+.comments-page {
+
 }
 
 header {
@@ -132,7 +137,7 @@ landlords-div {
 
 
 .comments-page {
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
 }
 
@@ -166,7 +171,6 @@ landlords-div {
 }
 
 .message {
-  color: $bluesky;
   font-size: 20px;
   text-align: center;
 }

@@ -121,7 +121,7 @@ const deleteLandlord = (dataId) => {
 
 const getAllMyComments = () => {
   return $.ajax({
-    url: config.apiOrigin + '/comments',
+    url: config.apiOrigin + '/comments/' + app.user.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -134,7 +134,7 @@ const getAllMyComments = () => {
 
 const getAllComments = () => {
   return $.ajax({
-    url: config.apiOrigin + '/comments/' + app.user.id + '/my_comments',
+    url: config.apiOrigin + '/comments/', // + '/my_comments',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
