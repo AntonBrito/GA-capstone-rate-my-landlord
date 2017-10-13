@@ -119,7 +119,7 @@ const deleteLandlord = (dataId) => {
   })
 }
 
-const getAllComments = () => {
+const getAllMyComments = () => {
   return $.ajax({
     url: config.apiOrigin + '/comments',
     method: 'GET',
@@ -132,7 +132,7 @@ const getAllComments = () => {
   })
 }
 
-const getAllMyComments = () => {
+const getAllComments = () => {
   return $.ajax({
     url: config.apiOrigin + '/comments/' + app.user.id + '/my_comments',
     method: 'GET',
@@ -174,7 +174,8 @@ const createComment = (data) => {
       'comment': {
         'subject': data.subject,
         'comment': data.comment,
-        'rate': data.rate
+        'rate': data.rate,
+        'landlord_id': data.landlord_id
       }
     },
     headers: {
@@ -193,7 +194,8 @@ const updateComment = (data, dataId) => {
       'comments': {
         'subject': data.subject,
         'comment': data.comment,
-        'rate': data.rate
+        'rate': data.rate,
+        'landlord_id': data.landlord_id
       }
     },
     headers: {

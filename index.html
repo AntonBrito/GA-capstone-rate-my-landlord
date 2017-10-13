@@ -48,7 +48,7 @@
             <div class="dropdown">
             <li><a href="#comments">Comments</a></li>
             <div class="dropdown-content">
-              <div id="get-every-comments" class="show-comment-create">All Comments</div>
+              <div id="get-every-comments" class="show-comment-create get-every-comments">All Comments</div>
             </div>
           </div>
           <li>
@@ -64,7 +64,7 @@
 
       <main>
 
-        <div id="message">
+        <div id="message" class="message">
         </div>
 
     <div id="signfo" class="signfo">
@@ -105,9 +105,9 @@
 
         <br><br>
 
-        <div id="message">
+        <div id="message" class="message">
         </div>
-        <br><br>
+        <br>
 
         <div id="landlords_page" class="landlords_page">
       <div id="landlords-div">
@@ -147,6 +147,7 @@
           <form id="comment_form" class="comment_form">
             <fieldset>
               <legend>Comment about your landlord</legend>
+              <input id="get_landlords_id" class="get-landlords-id" type="text" name="landlord_id" placeholder="Landlords ID">
               <input id="comment-title" class="comment-title" type="text" name="subject" placeholder="Subject Here">
               <br><br>
               <textarea name="comment" placeholder="Comment Here" id="textbox" type="text" class="textbox"></textarea>

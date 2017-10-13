@@ -129,6 +129,7 @@ const onGetOneComment = function (event) {
 
 const onCreateComment = function (event) {
   const data = getFormFields(this)
+  debugger
   console.log('comment to create')
   console.log(data)
   event.preventDefault()

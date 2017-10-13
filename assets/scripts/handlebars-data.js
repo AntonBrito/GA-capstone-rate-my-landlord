@@ -10,12 +10,13 @@ const landlordsHandlebars = function (name, address) {
 
 // template context for pages/
 
-const commentsHandlebars = function (subject, comment, rate) {
+const commentsHandlebars = function (landlord_id, subject, comment, rate) {
   const commentHandlebarsTemplate = require('./comments-template.handlebars')
   const context = {
     'subject': subject,
     'comment': comment,
-    'rate': rate
+    'rate': rate,
+    'landlord_id': landlord_id
   }
   console.log('info from handlebars' + subject + comment + rate)
   const templateFilled = commentHandlebarsTemplate(context)

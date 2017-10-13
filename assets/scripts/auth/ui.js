@@ -7,12 +7,14 @@ const signUpSuccess = (data) => {
   app.user = data.user
   console.log(data)
   console.log('signed up Successfully')
+  $('#update_comment').hide()
   // console.log('I did something in ui.js!')
 }
 
 const signUpFailure = (error) => {
   console.log(error)
   console.log('failed to signUp')
+  $('#update_comment').hide()
 }
 
 const signInSuccess = (data) => {
@@ -22,7 +24,7 @@ const signInSuccess = (data) => {
   $('#signfo').hide()
   $('#message').html('You are Signed In!')
   $('#landlords_page').hide()
-  $('#comments_page').hide()
+  $('#comments_page #update_comment').hide()
 }
 
 const signInFailure = (error) => {
@@ -126,7 +128,8 @@ const getAllMyCommentsSuccess = (data) => {
   $('#listOfComments').empty()
   for (let i = 0; i < data.comments.length; i++) {
     // data-id = data.comments[i]._id
-    const dataId = data.comments[i]._id
+    console.log(data.comments[i])
+    const dataId = data.comments[i].id
     console.log('dataId === ' + dataId)
     const subject = data.comments[i].title
     template.dropdownHandlebars(subject, dataId)
