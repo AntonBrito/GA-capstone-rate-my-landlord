@@ -38,6 +38,7 @@ const onSignIn = function (event) {
 }
 
 const onSignOut = function (event) {
+  console.log('tryin to sign out')
   const data = getFormFields(this)
   event.preventDefault()
   api.signOut(data)

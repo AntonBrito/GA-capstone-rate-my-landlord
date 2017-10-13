@@ -19,7 +19,7 @@ const commentsHandlebars = function (subject, comment, rate) {
   }
   console.log('info from handlebars' + subject + comment + rate)
   const templateFilled = commentHandlebarsTemplate(context)
-  $('#comment-div').append(templateFilled)
+  $('#comments-div').append(templateFilled)
 }
 
 const dropdownHandlebars = function (subject, dataId) {

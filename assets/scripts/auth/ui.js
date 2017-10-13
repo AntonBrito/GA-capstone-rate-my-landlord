@@ -44,7 +44,7 @@ const signOutSuccess = (data) => {
   console.log(data)
   console.log('Succeded in logOutSuccess')
   $('#signfo').show()
-  $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #update_comment').hide()
+  $('#landlords_page, #comments_page, #create_landlord, #create_comment, #update_landlord, #comments_form, #update_comment').hide()
   $('#message').html('You Have Signed Out!')
   $('#listOfLandlords').empty()
 }
@@ -89,8 +89,14 @@ const getMyLandlordsFailure = (error) => {
 }
 
 const getAllCommentsSuccess = (data) => {
-  app.comments = data.comments
-  console.log(app.comments)
+  const comments = data.comments
+  for (let i = 0; i < comments.length; i++) {
+    const subject = comments[i].subject
+    const comment = comments[i].comment
+    const rate = comments[i].rate
+    template.commentsHandlebars(subject, comment, rate)
+  }
+  console.log(comments)
   console.log('Succeded in getAllCommentsSuccess')
 }
 
@@ -157,7 +163,7 @@ const createLandlordFailure = (error) => {
 const deleteCommentSuccess = (data) => {
   console.log(data)
   console.log('Succeded in delete Comment Success')
-  $('#comment-div').empty()
+  $('#comments-div').empty()
 }
 
 const deleteCommentFailure = (error) => {
@@ -178,7 +184,7 @@ const deleteLandlordFailure = (error) => {
 const updateCommentSuccess = (data) => {
   console.log(data)
   console.log('Succeded in updateCommentSuccess')
-  $('#comment-div').empty()
+  $('#comments-div').empty()
   const subject = data.comment.subject
   const comment = data.comment.comment
   const rate = data.comment.rate
@@ -197,8 +203,8 @@ const updateLandlordSuccess = (data) => {
   $('#lanlords-div').empty()
   for (let i = 0; i < data.landlord.length; i++) {
     const name = data.landlord[i].name
-    const comment = data.landlord[i].body
-    template.landlordsHandlebars(name, comment)
+    const address = data.landlord[i].address
+    template.landlordsHandlebars(name, address)
   }
 }
 

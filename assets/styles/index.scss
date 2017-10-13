@@ -2,7 +2,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import '~./custom';
 
-
+#comments-div {
+  border: 2px, solid, black;
+}
 
 header {
   background-color: $bluesky;

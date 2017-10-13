@@ -122,7 +122,13 @@ const deleteLandlord = (dataId) => {
 const getAllComments = () => {
   return $.ajax({
     url: config.apiOrigin + '/comments',
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      user_id: app.user.id
+    }
   })
 }
 
@@ -160,11 +166,12 @@ const deleteComment = (dataId) => {
 const createComment = (data) => {
   console.log(data)
   console.log('cret comment')
+  console.log(app.user)
   return $.ajax({
     url: config.apiOrigin + '/comments',
     method: 'POST',
     data: {
-      'comments': {
+      'comment': {
         'subject': data.subject,
         'comment': data.comment,
         'rate': data.rate

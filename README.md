@@ -1,4 +1,4 @@
-                      #Rate-my-LandLord
+              #Rate-my-LandLord
 *An app to rate and post comment about your landlord*
 
 Its currently not function properly because of some techinical issues.
